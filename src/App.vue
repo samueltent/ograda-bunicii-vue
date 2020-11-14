@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Header/>
-    <v-main class="my-12">
+    <v-main id="app-view" class="my-12">
       <router-view/>
     </v-main>
   </v-app>
@@ -18,5 +18,7 @@ export default {
 </script>
 
 <style scoped>
-
+  #app-view {
+    background: linear-gradient(-45deg, #FFF8E8, #D9F4C7);
+  }
 </style>

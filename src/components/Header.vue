@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar fixed color="#F48F01" elevate-on-scroll>
+  <v-app-bar color="#F48F01" fixed elevate-on-scroll>
     <v-app-bar-nav-icon v-if="isMobile"></v-app-bar-nav-icon>
 
     <v-tabs v-if="!isMobile" color="white">
@@ -7,7 +7,7 @@
         <router-link tag="tab" to="/">Acasa</router-link>
       </v-tab>
       <v-tab>
-        <router-link tag="tab" to="/product">Produse</router-link>
+        <router-link tag="tab" to="/products">Produse</router-link>
       </v-tab>
     </v-tabs>
 
