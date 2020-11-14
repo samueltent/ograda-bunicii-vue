@@ -6,13 +6,13 @@
           <v-img :src="require('../assets/logo.png')" contain height="250" />
         </v-col>
       <v-col cols="12">
-        <v-img
+        <v-parallax 
           class="mb-2"
           id="banner"
           :src="require(`../assets/banner-landing.png`)"
           contain
           height="400"
-        />
+        ></v-parallax>
       </v-col>
 
       <v-col cols="12" class="my-3">
@@ -22,7 +22,7 @@
               Lorem ipsum dolor sit amet consectetur.
             </div>
           </v-col>
-          <v-col id="right-side" cols="6">
+          <v-col class="right-side" cols="6">
             <div class="text-lg-h5 font-weight-black mb-5">
               Lorem ipsum dolor sit.
             </div>
@@ -44,7 +44,7 @@
             :key="i"
             class="col-sm-12 col-lg-4"
           >
-            <v-card class="mx-auto my-12" max-width="374">
+            <v-card class="mx-auto my-12" max-width="300">
               <v-img height="250" :src="product.image"></v-img>
 
               <v-card-title>{{ product.title }}</v-card-title>
@@ -174,7 +174,7 @@ export default {
 </script>
 
 <style scoped>
-#right-side {
+.right-side {
   border-left: 0.2vw solid black;
 }
 </style>
