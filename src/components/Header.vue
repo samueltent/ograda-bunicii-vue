@@ -1,6 +1,8 @@
 <template>
-  <v-app-bar color="#F48F01" fixed elevate-on-scroll>
-    <v-app-bar-nav-icon v-if="isMobile"></v-app-bar-nav-icon>
+  <v-app-bar color="#FEA120" fixed height="" elevate-on-scroll>
+    
+    <v-app-bar-nav-icon v-if="isMobile">
+    </v-app-bar-nav-icon>
 
     <v-tabs v-if="!isMobile" color="white">
       <v-tab>
@@ -24,6 +26,15 @@
     <v-btn icon>
       <v-icon>mdi-facebook</v-icon>
     </v-btn>
+
+     <router-link tag="button" to="/cart">
+    <v-btn>
+      Cosul tau
+      <v-icon right>
+        mdi-cart-variant
+      </v-icon>
+    </v-btn>
+    </router-link>
   </v-app-bar>
 </template>
 
@@ -32,9 +43,17 @@ export default {
   name: "Header",
   data: () => {
     return {
-      isMobile: 0,
+      isMobile: true,
     };
   },
+  methods: {
+    handleView() {
+      this.isMobile = window.innerWidth < 900;
+    }
+  },
+  created() {
+    this.handleView();
+  }
 };
 </script>
 

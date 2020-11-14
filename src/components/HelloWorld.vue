@@ -5,7 +5,7 @@
       <v-col cols="12">
           <v-img :src="require('../assets/logo2.png')" contain height="250" />
         </v-col>
-      <v-col cols="12">
+              <v-col cols="12">
         <v-parallax 
           class="mb-2"
           id="banner"
@@ -14,8 +14,48 @@
           height="400"
         ></v-parallax>
       </v-col>
+        <v-col cols="12">
+            <v-row justify="space-around">
+              <v-card class="my-3" justify="center">
+                <v-card-text>
+                  <v-row justify="center" class="mx-auto">
+                    <v-icon color="black" x-large>
+                    mdi-truck-delivery
+                </v-icon>
+                  </v-row>
+                  <span>
+                  Lorem ipsum dolor sit amet consectetur.
+                </span>
+                </v-card-text>
+              </v-card>
+              <v-card class="my-3" justify="center">
+                <v-card-text>
+                  <v-row justify="center" class="mx-auto">
+                    <v-icon color="black" x-large>
+                    mdi-human-handsup
+                </v-icon>
+                  </v-row>
+                  <span>
+                  Lorem ipsum dolor sit amet consectetur.
+                </span>
+                </v-card-text>
+              </v-card>
+              <v-card class="my-3" justify="center">
+                <v-card-text>
+                  <v-row justify="center" class="mx-auto">
+                    <v-icon color="black" x-large>
+                    mdi-clock-time-three-outline
+                </v-icon>
+                  </v-row>
+                  <span>
+                  Lorem ipsum dolor sit amet consectetur.
+                </span>
+                </v-card-text>
+              </v-card>
+            </v-row>
+        </v-col>
 
-      <v-col cols="12" class="my-3">
+      <v-col id="" cols="12" class="my-3">
         <v-row justify="center">
           <v-col cols="6">
             <div class="text-lg-h5 font-weight-black text-center">
@@ -29,6 +69,11 @@
             <div class="text-lg-body-1">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
               officia dolorem ducimus voluptatibus aliquid labore?
+              <ul>
+                <li><strong>Lorem ipsum dolor sit amet consectetur.</strong></li>
+                <li><strong>Lorem ipsum dolor sit amet.</strong></li>
+                <li><strong>Lorem ipsum dolor sit amet consectetur.</strong></li>
+              </ul>
             </div>
           </v-col>
         </v-row>
@@ -44,7 +89,7 @@
             :key="i"
             class="col-sm-12 col-lg-4"
           >
-            <v-card class="mx-auto my-12" max-width="300">
+            <v-card class="mx-auto my-12 rounded-xl" max-width="300">
               <v-img height="250" :src="product.image"></v-img>
 
               <v-card-title>{{ product.title }}</v-card-title>
@@ -56,9 +101,29 @@
               </v-card-text>
 
               <v-card-actions>
-                <router-link to="/product" tag="button">
-                  <v-btn color="orange accent-3" text> Afla mai multe </v-btn>
-                </router-link>
+                <div>
+                    <router-link to="/product" tag="button">
+                    <v-btn
+                      :loading="loading3"
+                      :disabled="loading3"
+                      color="light-green"
+                      class="ma-2 white--text"
+                    >
+                    <v-icon> mdi-cart-variant </v-icon>
+                      Adauga in cos
+                    </v-btn>
+                    </router-link>
+                    <router-link to="/product" tag="button">
+                    <v-btn
+                      :loading="loading3"
+                      :disabled="loading3"
+                      color="grey"
+                      class="ma-2 white--text"
+                    >
+                      Afla mai multe
+                    </v-btn>
+                  </router-link>
+                  </div>
               </v-card-actions>
             </v-card>
           </v-col>
