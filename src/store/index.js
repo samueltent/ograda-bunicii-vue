@@ -56,12 +56,12 @@ export const store = new Vuex.Store({
             },
           ],
           cart: [
-          ]
+          ],
     },
     mutations: {
         addToCart (state, payload) {
             let productsInCart = state.cart.find(item => {
-              return item.id === payload.id
+              return item.product.id === payload.product.id
             });
 
             if(productsInCart) {
@@ -69,11 +69,19 @@ export const store = new Vuex.Store({
               return;
             }
             state.cart.push(payload);
+        },
+        removeProductFromCart (state, id) {
+          state.cart = state.cart.filter(item => {
+            return item.product.id !== id;
+          })
         }
     },
     actions: {
         addToCart ({commit}, payload) {
             commit('addToCart', payload);
+        },
+        removeProductFromCart ({commit}, id) {
+          commit('removeProductFromCart', id);
         }
     },
     getters: {

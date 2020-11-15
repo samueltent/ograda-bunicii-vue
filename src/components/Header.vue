@@ -29,10 +29,12 @@
 
      <router-link tag="button" to="/cart">
     <v-btn>
+      <v-badge :content="productsInCart.length" :value="productsInCart.length" color="green">
       Cosul tau
       <v-icon right>
         mdi-cart-variant
       </v-icon>
+    </v-badge>
     </v-btn>
     </router-link>
   </v-app-bar>
@@ -44,7 +46,13 @@ export default {
   data: () => {
     return {
       isMobile: true,
+      cartItems: 1
     };
+  },
+  computed: {
+    productsInCart() {
+      return this.$store.getters.productsInCart
+    }
   },
   methods: {
     handleView() {
