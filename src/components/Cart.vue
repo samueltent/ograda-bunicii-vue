@@ -1,13 +1,5 @@
 <template>
-  <div class="cart">
-    <v-contaier>
-      <v-row justify="center">
-        <v-col cols="12">
-          <v-img :src="require('../assets/logo2.png')" contain height="150" />
-        </v-col>
-      </v-row>
-    </v-contaier>
-  </div>
+    <h1>aici</h1>
 </template>
 
 <script>

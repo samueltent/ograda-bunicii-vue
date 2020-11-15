@@ -5,7 +5,12 @@
         <v-col cols="12">
           <v-img :src="require('../assets/logo2.png')" contain height="150" />
         </v-col>
-        <v-col v-if="!products.length" cols="12" justify="center" class="my-12">
+        <v-col
+          v-if="!productsInCart.length"
+          cols="12"
+          justify="center"
+          class="my-12"
+        >
           <div class="text-h4 text-md-h2 text-center">
             Costul tau este momentan gol!<br />
             <router-link tag="button" to="/products">
@@ -13,21 +18,48 @@
             </router-link>
           </div>
         </v-col>
+        <v-col
+          v-if="productsInCart.length"
+          cols="12"
+          justify="center"
+          class="my-12"
+        >
+          <div class="text-h4 text-md-h4 text-center">Cosul tau</div>
+          <v-row justify="center">
+            <!-- <v-col
+              v-for="item in productsInCart"
+              :key="item.product.id"
+              cols="auto"
+              sm="12"
+              md="4"
+            >
+              <ProductCard :product="item.product" />
+            </v-col> -->
+            <v-col cols="12" class="my-12">
+                <CardEntry v-for="items in productsInCart" :key="items.product.id" :items="items"/>
+            </v-col>
+          </v-row>
+        </v-col>
       </v-row>
     </v-container>
   </div>
 </template>
 
 <script>
+import CardEntry from '../components/CartEntry.vue'
 export default {
-  name: "Product",
-  data: () => {
-    return {
-      products: [],
-    };
+  name: "Cart",
+  components: {
+    CardEntry
+  },
+  computed: {
+    productsInCart() {
+      return this.$store.getters.productsInCart;
+    },
   },
 };
 </script>
 
 <style scoped>
+
 </style>
