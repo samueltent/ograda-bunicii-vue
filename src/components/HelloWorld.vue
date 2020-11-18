@@ -108,7 +108,7 @@ export default {
     products () {
       return this.$store.getters.products
     }
-  }
+  },
 }
 </script>
 

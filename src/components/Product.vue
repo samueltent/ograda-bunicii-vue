@@ -9,12 +9,10 @@
           <v-row>
             <v-col cols="auto" sm="12" md="6" class="d-flex flex-column">
               <div class="text-h6 text-md-h5 font-weight-black">
-                Lorem ipsum dolor sit amet.
+                {{product.title}}
               </div>
               <div class="caption">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Officiis possimus illo laudantium et blanditiis praesentium
-                illum cum amet itaque nemo.
+                {{product.description}}
                 <ul>
                   <li v-for="i in 4" :key="i">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -22,7 +20,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="align-self-end mt-12 text-lg-h2">5 lei/kg</div>
+              <div class="align-self-end mt-12 text-lg-h4">{{product.price}} RON / unitate</div>
             </v-col>
             <v-col cols="auto" sm="12" md="6" order="first" order-md="1">
               <v-img :src="product.image" contain max-height="300"> </v-img>
@@ -49,31 +47,6 @@
               <v-icon right> mdi-cart-variant </v-icon>
             </v-btn>
           </v-row>
-          <!-- <v-row class="my-6">
-            <v-col cols="6">
-              <div class="text-lg-h6 font-weight-black text-center">
-                Lorem ipsum dolor sit amet consectetur.
-              </div>
-              <div class="subtitle-1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Officiis et eveniet minima, facere ratione inventore excepturi
-                molestias nostrum ipsam corporis?
-              </div>
-            </v-col>
-            <v-col class="right-side" cols="6">
-              <v-avatar color="indigo" size="75">
-                <span class="white--text headline">VP</span>
-              </v-avatar>
-              <div class="text-lg-h5 font-weight-black mb-5">
-                Victor Popescu
-              </div>
-              <div class="my-4 subtitle-1">• Localitate, Judet</div>
-              <div class="text-lg-body-1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda officia dolorem ducimus voluptatibus aliquid labore?
-              </div>
-            </v-col>
-          </v-row> -->
           <v-row class="my-6">
             <div
               class="text-lg-h5 text-sm-h4 font-italic font-weight-black my-3"
@@ -82,8 +55,8 @@
             </div>
             <v-row>
               <v-col
-                v-for="(product, i) in products"
-                :key="i"
+                v-for="product in featuredProducts"
+                :key="product.id"
                 class="col-sm-12 col-lg-4"
               >
                 <ProductCard :product="product" />
@@ -100,6 +73,7 @@
 import ProductCard from "./ProductCard.vue";
 export default {
   name: "Product",
+  props: ["id"],
   components: {
     ProductCard,
   },
@@ -114,49 +88,20 @@ export default {
         product: this.product,
         quantity: this.productQuantity,
       });
+      this.productQuantity = 1;
     },
+  },
+  computed: {
+    product () {
+      return this.$store.getters.product(this.id);
+    },
+    featuredProducts () {
+      return this.$store.getters.featuredProducts;
+    }
   },
   data: () => {
     return {
       productQuantity: 1,
-      product: {
-        image:
-          "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
-        title: "Lorem ipsum dolor sit amet consectetur.",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-        price: 10,
-      },
-      products: [
-        {
-          image:
-            "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
-          title: "Lorem ipsum dolor sit amet consectetur.",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-        },
-        {
-          image:
-            "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
-          title: "Lorem ipsum dolor sit amet consectetur.",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-        },
-        {
-          image:
-            "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
-          title: "Lorem ipsum dolor sit amet consectetur.",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-        },
-        {
-          image:
-            "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
-          title: "Lorem ipsum dolor sit amet consectetur.",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-        },
-      ],
     };
   },
 };

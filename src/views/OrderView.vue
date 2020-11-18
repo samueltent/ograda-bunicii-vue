@@ -1,5 +1,5 @@
 <template>
-  <div id="order">
+  <div class="mb-12" id="order">
       <Order/>
   </div>
 </template>

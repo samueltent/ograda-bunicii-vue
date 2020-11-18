@@ -11,8 +11,8 @@
           </div>
           <v-row>
             <v-col
-              v-for="(product, i) in products"
-              :key="i"
+              v-for="product in products"
+              :key="product.id"
               class="col-sm-12 col-lg-4"
             >
               <ProductCard :product="product"/>

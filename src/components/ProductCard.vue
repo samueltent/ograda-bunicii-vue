@@ -20,7 +20,7 @@
             <v-icon> mdi-cart-variant </v-icon>
             Adauga in cos
           </v-btn>
-        <router-link to="/product" tag="button">
+        <router-link :to="'/product/' + product.id" tag="button">
           <v-btn
             color="grey"
             class="ma-2 white--text"

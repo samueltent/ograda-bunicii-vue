@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-12">
     <v-container>
       <v-row justify="center">
         <v-col cols="12">
@@ -9,7 +9,7 @@
           v-if="!productsInCart.length"
           cols="12"
           justify="center"
-          class="my-12"
+          class="mt-12"
         >
           <div class="text-h4 text-md-h2 text-center">
             Costul tau este momentan gol!<br />
@@ -48,7 +48,7 @@
     </v-container>
     <v-container v-if="productsInCart.length">
       <v-row justify="end">
-        <v-col class="text-h6" cols="3"> Pret total: {{getTotalPrice}} RON </v-col>
+        <v-col class="text-h6" cols="auto"> Pret total: {{getTotalPrice}} RON </v-col>
       </v-row>
       <v-row justify="center">
         <router-link tag="button" to="/order">

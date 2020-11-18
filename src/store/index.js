@@ -103,6 +103,16 @@ export const store = new Vuex.Store({
             price += item.product.price * item.quantity
           })
           return price;
+        },
+        product (state) {
+          return (productId) => {
+            return state.products.find(item => {
+              return item.id === productId;
+            })
+          }
+        },
+        featuredProducts (state, getters) {
+          return getters.products.slice(0,5);
         }
     } 
 });

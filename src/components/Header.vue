@@ -1,6 +1,6 @@
 <template>
-<div class="header">
-  <v-app-bar color="#FEA120" fixed height="" elevate-on-scroll>
+<div class="header mb-12">
+  <v-app-bar color="#FEA120" fixed app elevate-on-scroll>
     
     <v-app-bar-nav-icon @click="drawer = !drawer" v-if="isMobile">
     </v-app-bar-nav-icon>
@@ -19,11 +19,17 @@
     <v-spacer></v-spacer>
 
     <v-btn icon>
-      <v-icon>mdi-magnify</v-icon>
-    </v-btn>
-
-    <v-btn icon>
       <v-icon>mdi-facebook</v-icon>
+    </v-btn>
+    <v-btn icon>
+      <v-icon>mdi-instagram</v-icon>
+    </v-btn>
+    <v-btn v-if="!isMobile" outlined class="mr-6">
+      <v-text>+40775936505</v-text>
+      <v-icon>mdi-phone</v-icon>
+    </v-btn>
+    <v-btn icon v-if="isMobile">
+      <v-icon>mdi-phone</v-icon>
     </v-btn>
 
      <router-link tag="button" to="/cart">

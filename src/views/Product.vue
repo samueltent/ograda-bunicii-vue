@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <Product/>
+    <Product :id="id"/>
   </div>
 </template>
 
@@ -10,6 +10,7 @@ import Product from '../components/Product.vue'
 
 export default {
   name: 'Home',
+  props: ["id"],
   components: {
     Product
   }

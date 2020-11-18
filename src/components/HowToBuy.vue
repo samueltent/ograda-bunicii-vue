@@ -6,7 +6,7 @@
           <v-img :src="require('../assets/logo2.png')" contain height="150" />
         </v-col>
         <v-col cols="12">
-          <div class="text-lg-h4 text-sm-h4 font-italic font-weight-black my-3">
+          <div class="text-md-h4 text-h5 font-italic font-weight-black my-3">
             Cum cumpar?
           </div>
         </v-col>
