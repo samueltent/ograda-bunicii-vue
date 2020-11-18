@@ -13,6 +13,7 @@ export const store = new Vuex.Store({
               title: "Lorem ipsum dolor sit amet consectetur.",
               description:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
+                price: 5,
             },
             {
               id: "2",
@@ -21,6 +22,7 @@ export const store = new Vuex.Store({
               title: "Lorem ipsum dolor sit amet consectetur.",
               description:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
+                price: 5,
             },
             {
               id: "3",
@@ -29,6 +31,7 @@ export const store = new Vuex.Store({
               title: "Lorem ipsum dolor sit amet consectetur.",
               description:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
+                price: 5,
             },
             {
               id: "4",
@@ -37,6 +40,7 @@ export const store = new Vuex.Store({
               title: "Lorem ipsum dolor sit amet consectetur.",
               description:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
+                price: 5,
             },
             {
               id: "5",
@@ -45,6 +49,7 @@ export const store = new Vuex.Store({
               title: "Lorem ipsum dolor sit amet consectetur.",
               description:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
+                price: 5,
             },
             {
               id: "6",
@@ -53,6 +58,7 @@ export const store = new Vuex.Store({
               title: "Lorem ipsum dolor sit amet consectetur.",
               description:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
+                price: 5,
             },
           ],
           cart: [
@@ -90,6 +96,13 @@ export const store = new Vuex.Store({
         },
         productsInCart (state) {
             return state.cart;
+        },
+        getTotalPrice (state) {
+          let price = 0;
+          state.cart.forEach(item => {
+            price += item.product.price * item.quantity
+          })
+          return price;
         }
     } 
 });

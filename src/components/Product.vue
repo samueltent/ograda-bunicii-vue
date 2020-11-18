@@ -28,7 +28,28 @@
               <v-img :src="product.image" contain max-height="300"> </v-img>
             </v-col>
           </v-row>
-          <v-row class="my-6">
+          <v-row justify="start">
+            <v-col cols="6">
+              <v-container>
+                <v-row>
+                  <div class="text-h6">Cantitate: {{ productQuantity }}</div>
+                </v-row>
+              </v-container>
+              <v-btn icon @click.prevent="handleQuantity(false)"
+                ><v-icon>mdi-plus</v-icon></v-btn
+              >
+              <v-btn icon @click.prevent="handleQuantity(true)"
+                ><v-icon>mdi-minus</v-icon></v-btn
+              >
+            </v-col>
+          </v-row>
+          <v-row justify="start">
+            <v-btn @click.prevent="addToCart" x-large color="light-green">
+              <v-text>Adauga in cos</v-text>
+              <v-icon right> mdi-cart-variant </v-icon>
+            </v-btn>
+          </v-row>
+          <!-- <v-row class="my-6">
             <v-col cols="6">
               <div class="text-lg-h6 font-weight-black text-center">
                 Lorem ipsum dolor sit amet consectetur.
@@ -52,12 +73,12 @@
                 Assumenda officia dolorem ducimus voluptatibus aliquid labore?
               </div>
             </v-col>
-          </v-row>
+          </v-row> -->
           <v-row class="my-6">
             <div
               class="text-lg-h5 text-sm-h4 font-italic font-weight-black my-3"
             >
-              Alte produse ale lui Victor Popescu:
+              Alte produse asemanatoare in Oradea:
             </div>
             <v-row>
               <v-col
@@ -65,25 +86,7 @@
                 :key="i"
                 class="col-sm-12 col-lg-4"
               >
-                <v-card class="mx-auto my-12" max-width="300">
-                  <v-img height="250" :src="product.image"></v-img>
-
-                  <v-card-title>{{ product.title }}</v-card-title>
-
-                  <v-card-text>
-                    <div class="my-4 subtitle-1">• Localitate, Judet</div>
-
-                    <div>{{ product.description }}</div>
-                  </v-card-text>
-
-                  <v-card-actions>
-                    <router-link to="/product" tag="button">
-                      <v-btn color="orange accent-3" text>
-                        Afla mai multe
-                      </v-btn>
-                    </router-link>
-                  </v-card-actions>
-                </v-card>
+                <ProductCard :product="product" />
               </v-col>
             </v-row>
           </v-row>
@@ -94,47 +97,66 @@
 </template>
 
 <script>
+import ProductCard from "./ProductCard.vue";
 export default {
   name: "Product",
+  components: {
+    ProductCard,
+  },
+  methods: {
+    handleQuantity(substract) {
+      if (substract) {
+        if (this.productQuantity > 1) return this.productQuantity--;
+      } else return this.productQuantity++;
+    },
+    addToCart() {
+      this.$store.dispatch("addToCart", {
+        product: this.product,
+        quantity: this.productQuantity,
+      });
+    },
+  },
   data: () => {
     return {
+      productQuantity: 1,
       product: {
         image:
           "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
         title: "Lorem ipsum dolor sit amet consectetur.",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
+        price: 10,
       },
       products: [
-      {
-        image:
-          "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
-        title: "Lorem ipsum dolor sit amet consectetur.",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-      },
-      {
-        image:
-          "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
-        title: "Lorem ipsum dolor sit amet consectetur.",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-      },
-      {
-        image:
-          "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
-        title: "Lorem ipsum dolor sit amet consectetur.",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-      },
-      {
-        image:
-          "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
-        title: "Lorem ipsum dolor sit amet consectetur.",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-      },
-    ]
+        {
+          image:
+            "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
+          title: "Lorem ipsum dolor sit amet consectetur.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
+        },
+        {
+          image:
+            "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
+          title: "Lorem ipsum dolor sit amet consectetur.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
+        },
+        {
+          image:
+            "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
+          title: "Lorem ipsum dolor sit amet consectetur.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
+        },
+        {
+          image:
+            "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
+          title: "Lorem ipsum dolor sit amet consectetur.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
+        },
+      ],
     };
   },
 };

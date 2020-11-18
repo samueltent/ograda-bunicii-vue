@@ -1,7 +1,8 @@
 <template>
+<div class="header">
   <v-app-bar color="#FEA120" fixed height="" elevate-on-scroll>
     
-    <v-app-bar-nav-icon v-if="isMobile">
+    <v-app-bar-nav-icon @click="drawer = !drawer" v-if="isMobile">
     </v-app-bar-nav-icon>
 
     <v-tabs v-if="!isMobile" color="white">
@@ -11,12 +12,10 @@
       <v-tab>
         <router-link tag="tab" to="/products">Produse</router-link>
       </v-tab>
+      <v-tab>
+        <router-link tag="tab" to="/howtobuy">Cum cumpar</router-link>
+      </v-tab>
     </v-tabs>
-
-    <v-toolbar-title v-if="isMobile" class="text-uppercase text-button grey--white">
-      <span class="font-weight-black">Ograda</span>
-      <span>Bunicii</span></v-toolbar-title>
-
     <v-spacer></v-spacer>
 
     <v-btn icon>
@@ -28,7 +27,7 @@
     </v-btn>
 
      <router-link tag="button" to="/cart">
-    <v-btn>
+    <v-btn :class="{'white': !productsInCart.length, 'light-green' : productsInCart.length}">
       <v-badge :content="productsInCart.length" :value="productsInCart.length" color="green">
       Cosul tau
       <v-icon right>
@@ -38,6 +37,35 @@
     </v-btn>
     </router-link>
   </v-app-bar>
+
+  <v-navigation-drawer
+      v-model="drawer"
+      app
+      disable-resize-watcher
+      class="my-12"
+    >
+      <v-list
+        navs
+      >
+        <v-list-item-group
+          v-model="group"
+          active-class="deep-purple--text text--accent-4"
+        >
+          <v-list-item>
+            <v-list-item-title><router-link tag="button" to="/">Acasa</router-link></v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title><router-link tag="button" to="/products">Produse</router-link></v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title><router-link tag="button" to="/howtobuy">Cum cumpar</router-link></v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+</div>
 </template>
 
 <script>
@@ -45,8 +73,9 @@ export default {
   name: "Header",
   data: () => {
     return {
-      isMobile: true,
-      cartItems: 1
+      isMobile: false,
+      cartItems: 1,
+      drawer: false
     };
   },
   computed: {

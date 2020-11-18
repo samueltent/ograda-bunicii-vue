@@ -6,13 +6,12 @@
           <v-img :src="require('../assets/logo2.png')" contain height="250" />
         </v-col>
               <v-col cols="12">
-        <v-parallax 
-          class="mb-2"
+        <v-img 
           id="banner"
           :src="require(`../assets/banner-landing.png`)"
           contain
           height="400"
-        ></v-parallax>
+        ></v-img>
       </v-col>
         <v-col cols="12">
             <v-row justify="space-around">
