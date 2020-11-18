@@ -18,34 +18,34 @@ export const store = new Vuex.Store({
             {
               id: "2",
               image:
-                "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
+                "https://d1lqpgkqcok0l.cloudfront.net/medias/sys_master/h83/ha8/8909892976670.jpg",
               title: "Lorem ipsum dolor sit amet consectetur.",
               description:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-                price: 5,
+                price: 8,
             },
             {
               id: "3",
               image:
-                "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
+                "https://bulbiromania.ro/wp-content/uploads/2018/04/Castraveti-cornisor-600x600.jpg",
               title: "Lorem ipsum dolor sit amet consectetur.",
               description:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-                price: 5,
+                price: 7,
             },
             {
               id: "4",
               image:
-                "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
+                "https://www.csid.ro/wp-content/uploads/2014/03/11661848/1-leustean.jpg",
               title: "Lorem ipsum dolor sit amet consectetur.",
               description:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-                price: 5,
+                price: 10,
             },
             {
               id: "5",
               image:
-                "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
+                "https://prod-bonduelle.s3.eu-central-1.amazonaws.com/ro-ro/vegetables/Fasolea-alb%C4%83-boabe-1511272872_tmb.jpg",
               title: "Lorem ipsum dolor sit amet consectetur.",
               description:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
@@ -54,11 +54,11 @@ export const store = new Vuex.Store({
             {
               id: "6",
               image:
-                "https://5.imimg.com/data5/LM/DU/MY-22954806/apple-fruit-500x500.jpg",
+                "https://s13emagst.akamaized.net/products/1671/1670985/images/res_97fc3aaa78ed61bbb3d1de0bd387c30a.jpg",
               title: "Lorem ipsum dolor sit amet consectetur.",
               description:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio cupiditate assumenda officia facilis praesentium.",
-                price: 5,
+                price: 3,
             },
           ],
           cart: [
