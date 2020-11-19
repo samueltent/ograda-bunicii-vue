@@ -11,8 +11,8 @@
           justify="center"
           class="mt-12"
         >
-          <div class="text-h4 text-md-h2 text-center">
-            Costul tau este momentan gol!
+          <div id="custom-cart-text" class="text-center">
+            Cosul tau este momentan gol!
           </div>
           <div class="text-h4 text-md-h2 text-center mt-12">
             <router-link tag="button" to="/products">
@@ -92,5 +92,8 @@ export default {
 <style scoped>
 #header {
   border: 2px solid black;
+}
+#custom-cart-text {
+  font-size: 30px;
 }
 </style>

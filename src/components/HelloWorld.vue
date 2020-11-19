@@ -89,7 +89,7 @@
               </div>
             </v-col>
             <v-col class="right-side">
-              <div class="text-lg-h5 font-weight-black mb-5">
+              <div class="text-h5 font-weight-black mb-5">
                 Procedura de livrare.
               </div>
               <div>

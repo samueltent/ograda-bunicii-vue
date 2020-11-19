@@ -6,13 +6,13 @@
     </v-app-bar-nav-icon>
 
     <v-tabs v-if="!isMobile" color="white">
-      <v-tab>
+      <v-tab @click="navHome()">
         <router-link tag="tab" to="/">Acasa</router-link>
       </v-tab>
-      <v-tab>
+      <v-tab @click="navProducts()">
         <router-link tag="tab" to="/products">Produse</router-link>
       </v-tab>
-      <v-tab>
+      <v-tab @click="navHowToBuy()">
         <router-link tag="tab" to="/howtobuy">Cum cumpar</router-link>
       </v-tab>
     </v-tabs>
@@ -75,6 +75,7 @@
 </template>
 
 <script>
+
 export default {
   name: "Header",
   data: () => {
@@ -92,7 +93,16 @@ export default {
   methods: {
     handleView() {
       this.isMobile = window.innerWidth < 900;
-    }
+    },
+    navHome() {
+      this.$router.push('/');
+    },
+    navProducts() {
+      this.$router.push('/products');
+    },
+    navHowToBuy() {
+      this.$router.push('/howtobuy');
+    },
   },
   created() {
     this.handleView();
