@@ -6,12 +6,15 @@
           <v-img :src="require('../assets/logo2.png')" contain height="150" />
         </v-col>
         <v-col cols="12">
-          <div class="text-md-h4 text-h5 font-italic font-weight-black my-3">
-            Cum cumpar?
+          <div
+            id="header"
+            class="text-lg-h4 text-h5 font-weight-black mt-3 rounded-xl text-center pa-3"
+          >
+            CUM CUMPAR?
           </div>
         </v-col>
         <v-col justify="start">
-          <div class="text-caption">
+          <div class="text-custom">
             Cumpararea produselor din magazinul nostru o puteti face online,
             telefonic, What's App sau prin mesaje pe Facebook. <br />
             <strong> Comanda online </strong>
@@ -81,4 +84,10 @@ export default {
 </script>
 
 <style scoped>
+#header {
+  border: 2px solid black;
+}
+.text-custom {
+  font-family: 'Montserrat', serif;
+}
 </style>

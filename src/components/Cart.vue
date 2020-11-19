@@ -12,7 +12,9 @@
           class="mt-12"
         >
           <div class="text-h4 text-md-h2 text-center">
-            Costul tau este momentan gol!<br />
+            Costul tau este momentan gol!
+          </div>
+          <div class="text-h4 text-md-h2 text-center mt-12">
             <router-link tag="button" to="/products">
               <v-btn> EXPLOREAZA PRODUSE </v-btn>
             </router-link>
@@ -22,9 +24,14 @@
           v-if="productsInCart.length"
           cols="12"
           justify="center"
-          class="my-12"
+          class="mt-12"
         >
-          <div class="text-h3 text-md-h3 text-center"><strong>Cosul tau</strong></div>
+          <div
+            id="header"
+            class="text-lg-h4 text-h5 font-weight-black mt-3 pa-2 text-center rounded-xl"
+          >
+            COSUL TAU
+          </div>
           <v-row justify="center">
             <!-- <v-col
               v-for="item in productsInCart"
@@ -35,8 +42,8 @@
             >
               <ProductCard :product="item.product" />
             </v-col> -->
-            <v-col cols="12" class="my-12">
-              <CardEntry
+            <v-col cols="12" class="mt-12">
+              <CartEntry
                 v-for="items in productsInCart"
                 :key="items.product.id"
                 :items="items"
@@ -50,7 +57,7 @@
       <v-row justify="end">
         <v-col class="text-h6" cols="auto"> Pret total: {{getTotalPrice}} RON </v-col>
       </v-row>
-      <v-row justify="center">
+      <v-row class="mt-12" justify="center">
         <router-link tag="button" to="/order">
           <v-btn x-large color="green"> Plaseaza comanda </v-btn>
         </router-link>
@@ -60,11 +67,11 @@
 </template>
 
 <script>
-import CardEntry from "../components/CartEntry.vue";
+import CartEntry from "../components/CartEntry.vue";
 export default {
   name: "Cart",
   components: {
-    CardEntry,
+    CartEntry,
   },
   data: () => {
       return {
@@ -83,4 +90,7 @@ export default {
 </script>
 
 <style scoped>
+#header {
+  border: 2px solid black;
+}
 </style>

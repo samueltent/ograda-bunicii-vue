@@ -6,8 +6,11 @@
           <v-img :src="require('../assets/logo2.png')" contain height="150" />
         </v-col>
         <v-col cols="12">
-          <div class="text-lg-h4 text-sm-h4 font-italic font-weight-black my-3">
-            Produse disponibile in Oradea!
+          <div
+            id="header"
+            class="text-lg-h4 text-h5 font-weight-black mt-3 rounded-xl text-center pa-3 outlined"
+          >
+            PRODUSE DISPONIBILE IN ORADEA
           </div>
           <v-row>
             <v-col
@@ -15,7 +18,7 @@
               :key="product.id"
               class="col-sm-12 col-lg-4"
             >
-              <ProductCard :product="product"/>
+              <ProductCard :product="product" />
             </v-col>
           </v-row>
         </v-col>
@@ -25,17 +28,17 @@
 </template>
 
 <script>
-import ProductCard from '@/components/ProductCard'
+import ProductCard from "@/components/ProductCard";
 export default {
   name: "Product",
   components: {
-    ProductCard
+    ProductCard,
   },
   computed: {
-    products () {
-      return this.$store.getters.products
-    }
-  }
+    products() {
+      return this.$store.getters.products;
+    },
+  },
 };
 </script>
 
@@ -44,4 +47,9 @@ export default {
   border-left: 0.2vw solid black;
   text-align: right;
 }
+
+#header {
+  border: 2px solid black;
+}
+
 </style>

@@ -52,7 +52,7 @@
       <v-card
       flat
       tile
-      color="#FEA120"
+      color="#29d62b"
       class="flex white--text text-center"
     >
       <v-card-text>

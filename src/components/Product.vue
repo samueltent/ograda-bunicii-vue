@@ -20,7 +20,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="align-self-end mt-12 text-lg-h4">{{product.price}} RON / unitate</div>
+              <div class="align-self-end mt-12 text-md-h4 text-h5"><strong>{{product.price}} RON / unitate</strong></div>
             </v-col>
             <v-col cols="auto" sm="12" md="6" order="first" order-md="1">
               <v-img :src="product.image" contain max-height="300"> </v-img>
@@ -42,17 +42,22 @@
             </v-col>
           </v-row>
           <v-row justify="start">
+            <v-col>
             <v-btn @click.prevent="addToCart" x-large color="light-green">
               <v-text>Adauga in cos</v-text>
               <v-icon right> mdi-cart-variant </v-icon>
             </v-btn>
+            </v-col>
           </v-row>
           <v-row class="my-6">
+            <v-col>
             <div
-              class="text-lg-h5 text-sm-h4 font-italic font-weight-black my-3"
-            >
-              Alte produse asemanatoare in Oradea:
-            </div>
+            id="header"
+            class="text-lg-h4 text-h5 font-weight-black mt-3 rounded-xl text-center pa-3 outlined"
+          >
+            ALTI CLIENTI AU MAI CUMPARAT
+          </div>
+          </v-col>
             <v-row>
               <v-col
                 v-for="product in featuredProducts"
@@ -111,5 +116,9 @@ export default {
 .right-side {
   border-left: 0.2vw solid black;
   text-align: right;
+}
+
+#header {
+  border: 2px solid black;
 }
 </style>

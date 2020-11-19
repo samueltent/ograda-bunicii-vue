@@ -2,7 +2,7 @@
   <v-card class="mx-auto my-12 rounded-xl" max-width="300">
     <v-img height="250" :src="product.image"></v-img>
 
-    <v-card-title>{{ product.title }}</v-card-title>
+    <v-card-title><strong>{{ product.title }}</strong></v-card-title>
 
     <v-card-text>
       <div class="my-4 subtitle-1">• Localitate, Judet</div>

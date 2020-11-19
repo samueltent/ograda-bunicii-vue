@@ -20,11 +20,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
  #app {
    width: 100%;
  }
   #app-view {
-    background: linear-gradient(-45deg, #FFF8E8, #D9F4C7);
+    /* background: linear-gradient(-45deg, #f2f7f2, #F2E2D2); */
   }
 </style>
