@@ -56,16 +56,16 @@
       class="flex white--text text-center"
     >
       <v-card-text>
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
+        <a v-for="(icon,i) in icons" :href="icon.link" :key="i" target="__blank">
+          <v-btn
           class="mx-4 white--text"
           icon
         >
           <v-icon size="24px">
-            {{ icon }}
+            {{ icon.icon }}
           </v-icon>
-        </v-btn>
+          </v-btn>
+        </a>
       </v-card-text>
 
       <v-card-text>
@@ -97,7 +97,11 @@ export default {
   name: "Footer",
   data: () => {
     return {
-      icons: ["mdi-facebook", "mdi-facebook-messenger", "mdi-instagram"],
+      icons: [
+        {icon:"mdi-facebook", link:"https://www.facebook.com/Ograda-Bunicii-107097584552471"}, 
+        {icon:"mdi-facebook-messenger", link:"https://www.facebook.com/messages/t/107097584552471"},
+        {icon:"mdi-instagram", link:"https://www.instagram.com/ograda.bunicii/?fbclid=IwAR2Tt41lfJFVxQ9C2mvNNJDGviXEqtPpQAUiKP7TvELJFKfPzEtbjXkUVOw"}
+        ],
     };
   },
 };
@@ -106,5 +110,8 @@ export default {
 <style scoped>
 #footer {
     width: 100%;
+}
+a {
+  text-decoration: none;
 }
 </style>

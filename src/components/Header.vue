@@ -18,12 +18,16 @@
     </v-tabs>
     <v-spacer></v-spacer>
 
+    <a href="https://www.facebook.com/Ograda-Bunicii-107097584552471" target="_blank">
     <v-btn icon>
       <v-icon>mdi-facebook</v-icon>
     </v-btn>
+    </a>
+    <a href="https://www.instagram.com/ograda.bunicii/?fbclid=IwAR2Tt41lfJFVxQ9C2mvNNJDGviXEqtPpQAUiKP7TvELJFKfPzEtbjXkUVOw" target="_blank">
     <v-btn icon>
       <v-icon>mdi-instagram</v-icon>
     </v-btn>
+    </a>
     <!-- <v-btn v-if="!isMobile" outlined class="mr-6">
       <v-text>+40775936505</v-text>
       <v-icon>mdi-phone</v-icon>
@@ -114,4 +118,8 @@ export default {
 .shoppingCartGlow {
   box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 } 
+
+a {
+  text-decoration: none;
+}
 </style>
