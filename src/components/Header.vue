@@ -23,7 +23,7 @@
       <v-icon>mdi-facebook</v-icon>
     </v-btn>
     </a>
-    <a href="https://www.instagram.com/ograda.bunicii/?fbclid=IwAR2Tt41lfJFVxQ9C2mvNNJDGviXEqtPpQAUiKP7TvELJFKfPzEtbjXkUVOw" target="_blank">
+    <a href="https://www.facebook.com/Ograda-Bunicii-107097584552471" target="_blank">
     <v-btn icon>
       <v-icon>mdi-instagram</v-icon>
     </v-btn>
@@ -61,16 +61,16 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item>
-            <v-list-item-title><router-link tag="button" to="/">ACASA</router-link></v-list-item-title>
+          <v-list-item @click="navHome()">
+            <v-list-item-title>ACASA</v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title><router-link tag="button" to="/products">PRODUSE</router-link></v-list-item-title>
+          <v-list-item @click="navProducts()">
+            <v-list-item-title>PRODUSE</v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title><router-link tag="button" to="/howtobuy">CUM CUMPAR</router-link></v-list-item-title>
+          <v-list-item @click="navHowToBuy()">
+            <v-list-item-title>CUM CUMPAR</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
